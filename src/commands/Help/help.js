@@ -36,31 +36,34 @@ export default {
           await helper.start(interaction)
           break
 
-        case 'command':
+        case 'search':
           const requestedCommand = interaction.options.getString('command')
           const command = interaction.client['commands'].get(requestedCommand)
 
           if (!command)
             return interaction.editReply(`I don't have any command named \`${requestedCommand}\`.`)
 
-          const embed = new MessageEmbed({
-            author: {
-              name: interaction.client.user.username,
-              iconURL: interaction.client.user.avatarURL({ dynamic: true }),
-            },
-            color: 'RANDOM',
-            title: command.data.name,
-            description: command.data.description,
-            fields: [
-              {
-                name: 'Usage', value: command.usage ?? 'Not assigned', inline: true,
-              }, {
-                name: 'Required Permissions', value: command.requirements ?? 'None', inline: true,
-              },
+          await interaction.editReply({
+            embeds: [
+              new MessageEmbed({
+                author: {
+                  name: interaction.client.user.username,
+                  iconURL: interaction.client.user.avatarURL({ dynamic: true }),
+                },
+                color: 'RANDOM',
+                title: command.data.name,
+                description: command.data.description,
+                fields: [
+                  {
+                    name: 'Usage', value: command.usage ?? 'Not assigned', inline: true,
+                  }, {
+                    name: 'Required Permissions', value: command.requirements ?? 'None', inline: true,
+                  },
+                ],
+                timestamp: new Date(),
+              }),
             ],
-            timestamp: new Date(),
           })
-          await interaction.editReply({ embeds: [embed] })
           break
       }
 

@@ -23,7 +23,9 @@ export default {
     const embed = new MessageEmbed()
       .setColor('PURPLE')
       .setFooter(
-        `Page ${pageNo}/${helpArray.length} | Do "/help command name" for more information about a specific command`)
+        {
+          text: `Page ${pageNo}/${helpArray.length} | Do "/help command name" for more information about a specific command`,
+        })
 
     const getButtons = pageNo => new MessageActionRow({
       components: [
@@ -89,8 +91,7 @@ export default {
             name: `\`${name}\``, value: `${description}`, inline: true,
           }
         }))
-        .setFooter(
-          `Page ${pageNo}/${helpArray.length} | "Do /help command name" for more information about a specific command`)
+        .setFooter({ text: `Page ${pageNo}/${helpArray.length} | "Do /help command name" for more information about a specific command` })
 
       return i.update({
         embeds: [embed], components: [getButtons(pageNo)], fetchReply: true,
