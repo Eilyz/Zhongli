@@ -18,7 +18,7 @@ export default {
         new MessageEmbed({
           color: 'YELLOW',
           title: 'May your solemn invocation be favored by Rex Lapis\' benevolence',
-          image: { url: 'https://static.wikia.nocookie.net/gensin-impact/images/7/7a/Statue_of_the_Seven_Resonate_Geo.gif/revision/latest?cb=20210626224206' },
+          image: { url: 'https://gcdn.pbrd.co/images/LJSJLX2CRalu.gif?o=1' },
         }),
       ],
     })
