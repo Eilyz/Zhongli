@@ -21,6 +21,6 @@ export default {
           image: { url: 'https://cdn.discordapp.com/attachments/817493276793241663/927865370302361660/Statue_of_the_Seven_Resonate_Geo_1.gif' },
         }),
       ],
-    })
+    }).catch(console.log)
   },
 }
