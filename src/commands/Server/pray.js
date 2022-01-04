@@ -18,7 +18,7 @@ export default {
         new MessageEmbed({
           color: 'YELLOW',
           title: 'May your solemn invocation be favored by Rex Lapis\' benevolence',
-          image: { url: 'https://i.ibb.co/tDYYmzQ/Statue-of-the-Seven-Resonate-Geo.gif' },
+          image: { url: 'https://pasteboard.co/LJSJLX2CRalu.gif' },
         }),
       ],
     })
