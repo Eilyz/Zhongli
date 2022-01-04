@@ -18,7 +18,7 @@ export default {
         new MessageEmbed({
           color: 'YELLOW',
           title: 'May your solemn invocation be favored by Rex Lapis\' benevolence',
-          image: { url: 'https://i.vgy.me/8MXi88.gif' },
+          image: { url: 'https://imgur.com/uS9lsbN' },
         }),
       ],
     })
