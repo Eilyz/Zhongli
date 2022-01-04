@@ -18,7 +18,7 @@ export default {
         new MessageEmbed({
           color: 'YELLOW',
           title: 'May your solemn invocation be favored by Rex Lapis\' benevolence',
-          image: { url: 'https://cdn.discordapp.com/attachments/848009319990951945/927063680955330591/Statue_of_the_Seven_Resonate_Geo.gif' },
+          image: { url: 'https://cdn.discordapp.com/attachments/817493276793241663/927865370302361660/Statue_of_the_Seven_Resonate_Geo_1.gif' },
         }),
       ],
     })
