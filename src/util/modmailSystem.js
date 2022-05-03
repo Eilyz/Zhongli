@@ -27,12 +27,12 @@ export default {
         new MessageButton()
           .setCustomId('accept')
           .setStyle('SUCCESS')
-          .setLabel('Aggsept')
+          .setLabel('Accept')
           .setEmoji('<:zhonglithumbsup_shiru:891446896021864478>'),
         new MessageButton()
           .setCustomId('decline')
           .setStyle('DANGER')
-          .setLabel('Noppers')
+          .setLabel('Reject')
           .setEmoji('<:bennythumbsdown:828099320292835338>'),
       ])
 
