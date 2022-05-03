@@ -26,7 +26,10 @@ export default {
         return interaction.editReply(`\`${trigger}\` does not exist`)
 
       if (data.isEmbed) {
-        interaction.editReply({ embeds: [new MessageEmbed(JSON.parse(data.json))] })
+        interaction.editReply({ embeds: [
+          new MessageEmbed(JSON.parse(data.json))
+          ]
+        })
       } else {
         interaction.editReply(data.response)
       }

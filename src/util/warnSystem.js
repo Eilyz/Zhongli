@@ -39,7 +39,7 @@ export default {
           reason,
           date: `<t:${Math.round(interaction.createdTimestamp / 1000)}:R>`,
         })
-        data.save()
+        await data.save()
       } else {
         data.warnings.set(`${data.warnings.size + 1}`,
           {
@@ -49,7 +49,7 @@ export default {
             date: `<t:${Math.round(interaction.createdTimestamp / 1000)}:R>`,
           },
         )
-        data.save()
+        await data.save()
       }
 
       await member.send({
@@ -96,7 +96,7 @@ export default {
       else if (!data.warnings.has(`${caseNum}`))
         return interaction.editReply(`I couldn't find the warn with the given case number.`)
       data.warnings.delete(`${caseNum}`)
-      data.save()
+      await data.save()
       await interaction.editReply(`Removed the warn with the case number ${caseNum} from ${member.user.tag ?? member}.`)
     })
   },
