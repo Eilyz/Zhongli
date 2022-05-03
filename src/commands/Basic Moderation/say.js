@@ -27,7 +27,7 @@ export default {
     await interaction.deferReply({ ephemeral: true })
     const ch = interaction.options.getChannel('channel')
     const channel = await interaction.guild.channels.fetch(ch?.id).catch(() => {})
-    const msg = interaction.options.getString('message')
+    const msg = interaction.options.getString('message').replaceAll('\\n', '\n')
 
     channel.send(msg).then(async () => {
       await interaction.editReply('Sent!')
