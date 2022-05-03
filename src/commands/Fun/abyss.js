@@ -77,21 +77,26 @@ export default {
           if (err) throw err
           if (!data.length) return interaction.editReply('No units found in the abyss pool.')
 
-          let randomUnit = data[Math.floor(Math.random() * data.length)]['unit']
-          let team1 = []
-          let team2 = []
+          let roster = new Set(data.map(d =>
+            `${d.unit}`
+          ))
 
-          while (team1.length <= 3 && team2.length <= 3) {
-            randomUnit = data[Math.floor(Math.random() * data.length)]['unit']
-            if (team1.includes(randomUnit)) continue
-            team1.push(randomUnit)
-            randomUnit = data[Math.floor(Math.random() * data.length)]['unit']
-            if (team2.includes(randomUnit)) continue
-            team2.push(randomUnit)
+          let team1 = new Set()
+          let team2 = new Set()
 
-            if (team1.length === 4 && team2.length === 4)
-              return interaction.editReply(`Team 1: ${team1.join(' / ')}\nTeam 2: ${team2.join(' / ')}`)
+          for (let i = 1; i <= 8; i++) {
+            while (team1.size !== 4) {
+              let chara = Array.from(roster)[Math.floor(Math.random() * roster.size)]
+              team1.add(chara)
+              roster.delete(chara)
+            }
+            while (team2.size !== 4) {
+              let chara = Array.from(roster)[Math.floor(Math.random() * roster.size)]
+              team2.add(chara)
+              roster.delete(chara)
+            }
           }
+          interaction.editReply(`Team 1: ${Array.from(team1).join(' / ')}\nTeam 2: ${Array.from(team2).join(' / ')}`)
         })
         break
       case 'roll':
