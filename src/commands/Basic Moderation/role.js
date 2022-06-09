@@ -46,6 +46,9 @@ export default {
     const role = await interaction.guild.roles.fetch(roleID)
       .catch(() => {interaction.editReply('Couldn\'t find the role.')})
 
+    if (interaction.member.roles.highest <= role.position)
+      return await interaction.editReply(`You can't add/remove a role higher than you.`)
+
     if (member.roles.cache.has(role.id)) {
       await member.roles.remove(role.id).then(member => {
         interaction.editReply(`Removed **${role.name}** from **${member.user.tag}**.`)
