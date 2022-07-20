@@ -9,7 +9,7 @@ export default {
 
   /** @param { Client } client */
   async execute (client) {
-    zaq.ok(`Ready as ${client.user.tag}!`)
+    zaq.ok(`Ready as ${client.user.tag}`)
     await mongoose.connect(process.env.MONGOOSE_URL)
     await MuteHandler.checkMutes(client)
   },
