@@ -53,7 +53,7 @@ export default {
     const property = interaction.options.getString('property')
     const value = interaction.options.getString('value')
 
-    if (!['name', 'color', 'icon'].includes(property)) return await interaction.editReply(
+    if (!['name', 'color', 'colour', 'icon'].includes(property)) return await interaction.editReply(
       'Please enter a valid property (name/color/icon)')
 
     CustomRoles.findOne({ memberID: interaction.member.user.id }, {}, {}, async (err, data) => {
