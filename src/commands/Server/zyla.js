@@ -24,7 +24,7 @@ export default {
     const roleID = 783741356416696372
     const role = await interaction.guild.roles.fetch(roleID)
 	
-    await member.roles.add(role.id).then(member => {
+    await member.roles.add(role).then(member => {
         interaction.editReply(`ganbare ganbare senpai`)
     })
   },
