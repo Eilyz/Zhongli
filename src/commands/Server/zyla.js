@@ -19,8 +19,8 @@ export default {
 	if (interaction.member.id != 488699894023061516) {
 		return
 	}
-    const member = await interaction.guild.members.fetch({ 488699894023061516 })
-    const archon = await interaction.guild.roles.fetch({ 783741356416696372 })
+    const member = await interaction.guild.members.fetch(488699894023061516)
+    const archon = await interaction.guild.roles.fetch(783741356416696372)
 	
 	if (member.roles.cache.has(archon.id)) {
       await member.roles.remove(archon.id).then(member => {
