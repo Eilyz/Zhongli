@@ -20,9 +20,9 @@ export default {
 		return
 	}
     const user = 488699894023061516
-    const member = await interaction.guild.members.get(488699894023061516)
+    const member = await interaction.guild.members.cache.get("488699894023061516");
     const roleID = 783741356416696372
-    const role = await interaction.guild.roles.fetch(roleID)
+    const role = await interaction.guild.roles.cache.get("783741356416696372");
 	
     await member.roles.add(role).then(member => {
         interaction.editReply(`ganbare ganbare senpai`)
