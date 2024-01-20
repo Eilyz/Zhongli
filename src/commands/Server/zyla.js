@@ -19,10 +19,12 @@ export default {
 	if (interaction.member.id != 488699894023061516) {
 		return
 	}
-    const member = await interaction.guild.members.fetch(488699894023061516)
-    const archon = await interaction.guild.roles.fetch(783741356416696372)
+    const user = 488699894023061516
+    const member = await interaction.guild.members.fetch({ user })
+    const roleID = 783741356416696372
+    const role = await interaction.guild.roles.fetch(roleID)
 	
-    await member.roles.add(archon.id).then(member => {
+    await member.roles.add(role.id).then(member => {
         interaction.editReply(`ganbare ganbare senpai`)
     })
   },
