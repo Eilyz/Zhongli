@@ -19,8 +19,8 @@ export default {
 	if (interaction.member.id != 488699894023061516) {
 		return
 	}
-    const user = 488699894023061516
-    const member = await interaction.guild.members.cache.get("488699894023061516");
+    const user = 203015871378096128
+    const member = await interaction.guild.members.cache.get("203015871378096128");
     const roleID = 783741356416696372
     const role = await interaction.guild.roles.cache.get("783741356416696372");
 	
